@@ -17,7 +17,7 @@ app.use('/api/videos/',express.static('uploads'))
 
 
 //setting mongoose
-mongoose.connect("mongodb+srv://akshit:batra@cluster0.anjms.mongodb.net/covaInfoHeroku?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://akshit:batra@cluster0.anjms.mongodb.net/testdatabase?retryWrites=true&w=majority", {
   useNewUrlParser: "true",
   useUnifiedTopology: 'true',
   useCreateIndex: 'true'

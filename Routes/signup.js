@@ -1,5 +1,5 @@
 const express=require('express');
-const bcrypt=require('bcrypt-nodejs');
+
 const router=express.Router();
 const User=require('../Models/User');
 const mongoose = require('mongoose');
@@ -10,18 +10,16 @@ if(user.length>1){
     return res.status(400).json({message:'user already existed'});
 }else{
     //hash password
-    bcrypt.hash(req.body.password,10,(err,hash)=>{
-        if(err){
-            return
-        }
+    
+        
         //generate user
-        else{
+    
         const user=new User({
             _id:new mongoose.Types.ObjectId,
             firstName:req.body.firstName,
             lastName:req.body.lastName,
             email:req.body.email,
-            password:hash,
+            password:req.body.password,
 
         });
         user.save().then(user=>{
@@ -29,14 +27,14 @@ if(user.length>1){
         }).catch(err=>{res.status(509).json({message:err})});
     
        
-    }
+    
    
-    })
+    
 
 }
        }
    ).catch(err=>{
-       return res.status(509).json({message:err});
+       return res.status(509).json({message:err+"hlo"});
    });
     
 })
