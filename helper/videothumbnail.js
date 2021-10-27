@@ -5,7 +5,7 @@ const VideoDetails = require('../models/VideoDetail');
 const port = 3000
 
 
-const ffmpegPath='C:\\Users\\hp\\ffmpeg\\bin\\ffmpeg.exe'
+const ffmpegPath='ffmpeg'
 const width = 256;
 const height = 144;
 
