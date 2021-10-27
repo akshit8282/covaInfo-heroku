@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 const { createWriteStream } = require('fs');
 
-const VideoDetails = require('../models/VideoDetail');
+const VideoDetails = require('../Models/VideoDetail');
 const port = 3000
 
 
