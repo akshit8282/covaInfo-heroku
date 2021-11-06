@@ -25,7 +25,8 @@ then(user=>{
               }, 'secret', { expiresIn: '1h' });
             return res.status(200).json({
                 message:'authenticated',
-                token:token
+                token:token,
+                userName: user[0].firstName,
             })
         }
         
