@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
   }
 });
 router.delete('/deleteVideo/:id',async (req,res)=>{
-  console.log(req.params.id)
+  
   try{
     const video=await VideoDetails.findById(req.params.id);
     
