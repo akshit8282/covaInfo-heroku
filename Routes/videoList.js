@@ -1,3 +1,9 @@
+const express=require('express');
+const VideoDetails=require('../Models/VideoDetail');
+const router=express.Router();
+
+
+
 router.get('/', (req, res, next) => {
 
   
@@ -29,7 +35,7 @@ router.get('/', (req, res, next) => {
   }
 });
 router.delete('/deleteVideo/:id',async (req,res)=>{
-  
+  console.log(req.params.id)
   try{
     const video=await VideoDetails.findById(req.params.id);
     
@@ -45,3 +51,15 @@ res.status(200).json("deleted");
 })
 
 module.exports = router;
+/*router.get('/:id',(req,res,next)=>{
+    console.log(req.params.video_path);
+    videoDetails.find({id:req.params.video_path},(err,result)=>{
+        if(err){
+            return  res.status(400).json({message:err});
+
+        }
+        if(res){
+           return  res.status(400).json({result:result});
+        }
+    })
+})*/
